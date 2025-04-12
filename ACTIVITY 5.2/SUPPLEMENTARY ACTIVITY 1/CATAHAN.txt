@@ -1,0 +1,2 @@
+Line 1: This file demonstrates file operations in Python.
+Line 2: We can create, read, update, and delete files.

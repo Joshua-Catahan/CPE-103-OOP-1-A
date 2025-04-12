@@ -1,0 +1,2 @@
+Subject: THIS IS FOR 'mbox.txt' #subject 1
+Subject: THIS IS FOR 'mbox.txt' #subject 2

@@ -1,0 +1,4 @@
+Subject: THIS ONE IS FOR 'stuff.txt' #Subject 1
+Subject: THIS ONE IS FOR 'stuff.txt' #Subject 2
+Subject: THIS ONE IS FOR 'stuff.txt' #Subject 3
+Subject: THIS ONE IS FOR 'stuff.txt' #Subject 4
