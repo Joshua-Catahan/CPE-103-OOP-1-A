@@ -1,0 +1,724 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Joshua-Catahan/CPE-103-OOP-1-A/blob/main/OOPintro_catahan.ipynb%20(LAB%203)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "SES1w4321ovn"
+      },
+      "source": [
+        "Creating Classes\n",
+        "1.\tCreate a folder named OOPIntro_LastName\n",
+        "2.\tCreate a Python file inside the OOPIntro_LastName folder named Accounts.py and copy the code shown below:\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fhT-3C5tGIE4"
+      },
+      "source": [
+        "Accounts.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "eEiHW3iXF9Zv"
+      },
+      "outputs": [],
+      "source": [
+        "\"\"\"\n",
+        "  Accounts.py\n",
+        "\"\"\"\n",
+        "\n",
+        "class Accounts(): #create the class\n",
+        "  account_number = 0\n",
+        "  account_firstname = \"\"\n",
+        "  account_lastname = \"\"\n",
+        "  current_balance = 0.0\n",
+        "  address = \"\"\n",
+        "  email = \"\"\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    Accounts.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    Accounts.email = new_email\n",
+        "\n",
+        "#3.\tModify the Accounts.py and add self, before the new_address and new_email."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4.\tCreate a new file named ATM.py and copy the code shown below:"
+      ],
+      "metadata": {
+        "id": "CCT5K7wAKfWq"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "gpA9oDygHP3h"
+      },
+      "source": [
+        "ATM.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Qp4W-9v6HH0o"
+      },
+      "outputs": [],
+      "source": [
+        "\"\"\"\n",
+        "  ATM.py\n",
+        "\"\"\"\n",
+        "\n",
+        "class ATM():\n",
+        "    serial_number = 0\n",
+        "\n",
+        "    def deposit(self, account, amount):\n",
+        "      account.current_balance = account.current_balance + amount\n",
+        "      print(\"Deposit Complete\")\n",
+        "\n",
+        "    def withdraw(self, account, amount):\n",
+        "      account.current_balance = account.current_balance - amount\n",
+        "      print(\"Withdrawal Complete\")\n",
+        "\n",
+        "    def check_currentbalance(self, account):\n",
+        "      print(account.current_balance)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qMmckLb1ITma"
+      },
+      "source": [
+        "Creating Instances of Classes\n",
+        "5.\tCreate a new file named main.py and copy the code shown below:\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZHxVer1uIcpg",
+        "outputId": "f268db07-1b52-44eb-92ff-4f43b7513ac3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account 1\n",
+            "Royce\n",
+            "Chua\n",
+            "1000\n",
+            "Silver Street Quezon City\n",
+            "roycechua123@gmail.com\n",
+            "\n",
+            "Account 2\n",
+            "John\n",
+            "Doe\n",
+            "2000\n",
+            "Gold Street Quezon City\n",
+            "johndoe@yahoo.com\n"
+          ]
+        }
+      ],
+      "source": [
+        "\"\"\"\n",
+        "    main.py\n",
+        "\"\"\"\n",
+        "\n",
+        "#import account:\n",
+        "class Accounts(): #create the class\n",
+        "  account_number = 0\n",
+        "  account_firstname = \"\"\n",
+        "  account_lastname = \"\"\n",
+        "  current_balance = 0.0\n",
+        "  address = \"\"\n",
+        "  email = \"\"\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    Accounts.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    Accounts.email = new_email\n",
+        "\n",
+        "Account1 = Accounts()\n",
+        "\n",
+        "print(\"Account 1\")\n",
+        "Account1.account_firstname = \"Royce\"\n",
+        "Account1.account_lastname = \"Chua\"\n",
+        "Account1.current_balance = 1000\n",
+        "Account1.address = \"Silver Street Quezon City\"\n",
+        "Account1.email = \"roycechua123@gmail.com\"\n",
+        "\n",
+        "print(Account1.account_firstname)\n",
+        "print(Account1.account_lastname)\n",
+        "print(Account1.current_balance)\n",
+        "print(Account1.address)\n",
+        "print(Account1.email)\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "Account2 = Accounts()\n",
+        "Account2.account_firstname = \"John\"\n",
+        "Account2.account_lastname = \"Doe\"\n",
+        "Account2.current_balance = 2000\n",
+        "Account2.address = \"Gold Street Quezon City\"\n",
+        "Account2.email = \"johndoe@yahoo.com\"\n",
+        "\n",
+        "print(\"Account 2\")\n",
+        "print(Account2.account_firstname)\n",
+        "print(Account2.account_lastname)\n",
+        "print(Account2.current_balance)\n",
+        "print(Account2.address)\n",
+        "print(Account2.email)\n",
+        "\n",
+        "#6) Run the main.py program and observe the output. Observe the variables names account_firstname, account_lastname as well as other variables being used in the Account1 and Account2.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "VmNciy-A4Q7l"
+      },
+      "source": [
+        "7. Modify the main.py program and add the code underlined in red."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Bwdmr_Mo4QUF",
+        "outputId": "6b873ffa-bc9d-455c-9b4f-67921d5128bd"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account 1\n",
+            "Royce\n",
+            "Chua\n",
+            "1000\n",
+            "Silver Street Quezon City\n",
+            "roycechua123@gmail.com\n",
+            "\n",
+            "Account 2\n",
+            "John\n",
+            "Doe\n",
+            "2000\n",
+            "Gold Street Quezon City\n",
+            "johndoe@yahoo.com\n"
+          ]
+        }
+      ],
+      "source": [
+        "\"\"\"\n",
+        "    main.py\n",
+        "\"\"\"\n",
+        "\n",
+        "#import account:\n",
+        "class Accounts(): #create the class\n",
+        "  account_number = 0\n",
+        "  account_firstname = \"\"\n",
+        "  account_lastname = \"\"\n",
+        "  current_balance = 0.0\n",
+        "  address = \"\"\n",
+        "  email = \"\"\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    Accounts.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    Accounts.email = new_email\n",
+        "\n",
+        "#import atm (this is the underdlined in red):\n",
+        "class ATM():\n",
+        "    serial_number = 0\n",
+        "\n",
+        "    def deposit(self, account, amount):\n",
+        "      account.current_balance = account.current_balance + amount\n",
+        "      print(\"Deposit Complete\")\n",
+        "\n",
+        "    def withdraw(self, account, amount):\n",
+        "      account.current_balance = account.current_balance - amount\n",
+        "      print(\"Withdrawal Complete\")\n",
+        "\n",
+        "    def check_balance(self, account):\n",
+        "      print(account.current_balance)\n",
+        "\n",
+        "\n",
+        "Account1 = Accounts()\n",
+        "\n",
+        "print(\"Account 1\")\n",
+        "Account1.account_firstname = \"Royce\"\n",
+        "Account1.account_lastname = \"Chua\"\n",
+        "Account1.current_balance = 1000\n",
+        "Account1.address = \"Silver Street Quezon City\"\n",
+        "Account1.email = \"roycechua123@gmail.com\"\n",
+        "\n",
+        "print(Account1.account_firstname)\n",
+        "print(Account1.account_lastname)\n",
+        "print(Account1.current_balance)\n",
+        "print(Account1.address)\n",
+        "print(Account1.email)\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "Account2 = Accounts()\n",
+        "Account2.account_firstname = \"John\"\n",
+        "Account2.account_lastname = \"Doe\"\n",
+        "Account2.current_balance = 2000\n",
+        "Account2.address = \"Gold Street Quezon City\"\n",
+        "Account2.email = \"johndoe@yahoo.com\"\n",
+        "\n",
+        "print(\"Account 2\")\n",
+        "print(Account2.account_firstname)\n",
+        "print(Account2.account_lastname)\n",
+        "print(Account2.current_balance)\n",
+        "print(Account2.address)\n",
+        "print(Account2.email)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "AJ185e9n4tEG"
+      },
+      "source": [
+        "8. Modify the main.py program and add the code below line 38."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HlWdUA1W4t32",
+        "outputId": "b8923a7b-9680-4dc9-d184-12d5c7fdb43b"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account 1\n",
+            "Royce\n",
+            "Chua\n",
+            "1000\n",
+            "Silver Street Quezon City\n",
+            "roycechua123@gmail.com\n",
+            "\n",
+            "Account 2\n",
+            "John\n",
+            "Doe\n",
+            "2000\n",
+            "Gold Street Quezon City\n",
+            "johndoe@yahoo.com\n",
+            "\n",
+            "Deposit Complete\n",
+            "1500\n",
+            "Deposit Complete\n",
+            "2300\n"
+          ]
+        }
+      ],
+      "source": [
+        "\"\"\"\n",
+        "    main.py\n",
+        "\"\"\"\n",
+        "#import account:\n",
+        "class Accounts(): #create the class\n",
+        "  account_number = 0\n",
+        "  account_firstname = \"\"\n",
+        "  account_lastname = \"\"\n",
+        "  current_balance = 0.0\n",
+        "  address = \"\"\n",
+        "  email = \"\"\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    Accounts.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    Accounts.email = new_email\n",
+        "\n",
+        "#import atm:\n",
+        "class ATM():\n",
+        "    serial_number = 0\n",
+        "\n",
+        "    def deposit(self, account, amount):\n",
+        "      account.current_balance = account.current_balance + amount\n",
+        "      print(\"Deposit Complete\")\n",
+        "\n",
+        "    def withdraw(self, account, amount):\n",
+        "      account.current_balance = account.current_balance - amount\n",
+        "      print(\"Withdrawal Complete\")\n",
+        "\n",
+        "    def check_currentbalance(self, account):\n",
+        "      print(account.current_balance)\n",
+        "\n",
+        "Account1 = Accounts()\n",
+        "\n",
+        "print(\"Account 1\")\n",
+        "Account1.account_firstname = \"Royce\"\n",
+        "Account1.account_lastname = \"Chua\"\n",
+        "Account1.current_balance = 1000\n",
+        "Account1.address = \"Silver Street Quezon City\"\n",
+        "Account1.email = \"roycechua123@gmail.com\"\n",
+        "\n",
+        "print(Account1.account_firstname)\n",
+        "print(Account1.account_lastname)\n",
+        "print(Account1.current_balance)\n",
+        "print(Account1.address)\n",
+        "print(Account1.email)\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "Account2 = Accounts()\n",
+        "Account2.account_firstname = \"John\"\n",
+        "Account2.account_lastname = \"Doe\"\n",
+        "Account2.current_balance = 2000\n",
+        "Account2.address = \"Gold Street Quezon City\"\n",
+        "Account2.email = \"johndoe@yahoo.com\"\n",
+        "\n",
+        "print(\"Account 2\")\n",
+        "print(Account2.account_firstname)\n",
+        "print(Account2.account_lastname)\n",
+        "print(Account2.current_balance)\n",
+        "print(Account2.address)\n",
+        "print(Account2.email)\n",
+        "\n",
+        "print ()\n",
+        "\n",
+        "#Creating and using an ATM object\n",
+        "ATM1 = ATM()\n",
+        "ATM1.deposit(Account1,500)\n",
+        "ATM1.check_currentbalance(Account1)\n",
+        "\n",
+        "ATM1.deposit(Account2,300)\n",
+        "ATM1.check_currentbalance(Account2)\n",
+        "\n",
+        "#9) Run the main.py program"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KugL5VRYLz83"
+      },
+      "source": [
+        "Create the Constructor in each Class\n",
+        "1.\tModify the Accounts.py with the following code:\n",
+        "Reminder: def  init (): is also known as the constructor class\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "vWLGorJXLy77"
+      },
+      "outputs": [],
+      "source": [
+        "\"\"\"\n",
+        "  Accounts.py\n",
+        "\"\"\"\n",
+        "\n",
+        "class Accounts(): #create the class\n",
+        "  def __init__(self, account_number, account_firstname, account_lastname, current_balance, address, email):\n",
+        "    self.account_number = account_number\n",
+        "    self.account_firstname = account_firstname\n",
+        "    self.account_lastname = account_lastname\n",
+        "    self.current_balance = current_balance\n",
+        "    self.address = address\n",
+        "    self.email = email\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    self.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    self.email = new_email"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.\tModify the main.py and change the following codes with the red line. Do not remove the other codes in the program."
+      ],
+      "metadata": {
+        "id": "V9oU5EK1fMqi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "gHTTz7N1NAbI",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "765ca20d-113d-4fc1-cdcb-f5223ad52ab7"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account 1\n",
+            "Royce\n",
+            "Chua\n",
+            "1000\n",
+            "Silver Street Quezon City\n",
+            "roycechua123@gmail.com\n",
+            "\n",
+            "Account 2\n",
+            "John\n",
+            "Doe\n",
+            "2000\n",
+            "Gold Street Quezon City\n",
+            "johndoe@yahoo.com\n",
+            "\n",
+            "Deposit Complete\n",
+            "1500\n",
+            "Deposit Complete\n",
+            "2300\n"
+          ]
+        }
+      ],
+      "source": [
+        "\"\"\"\n",
+        "  main.py\n",
+        "\"\"\"\n",
+        "\n",
+        "#import Accounts:\n",
+        "class Accounts(): #create the class\n",
+        "  def __init__(self, account_number, account_firstname, account_lastname, current_balance, address, email):\n",
+        "    self.account_number = account_number\n",
+        "    self.account_firstname = account_firstname\n",
+        "    self.account_lastname = account_lastname\n",
+        "    self.current_balance = current_balance\n",
+        "    self.address = address\n",
+        "    self.email = email\n",
+        "\n",
+        "  def update_address(self, new_address):\n",
+        "    self.address = new_address\n",
+        "\n",
+        "  def update_email(self, new_email):\n",
+        "    self.email = new_email\n",
+        "#import ATM:\n",
+        "class ATM():\n",
+        "    serial_number = 0\n",
+        "\n",
+        "    def deposit(self, account, amount):\n",
+        "      account.current_balance = account.current_balance + amount\n",
+        "      print(\"Deposit Complete\")\n",
+        "\n",
+        "    def withdraw(self, account, amount):\n",
+        "      account.current_balance = account.current_balance - amount\n",
+        "      print(\"Withdrawal Complete\")\n",
+        "\n",
+        "    def check_currentbalance(self, account):\n",
+        "      print(account.current_balance)\n",
+        "\n",
+        "\n",
+        "Account1 = Accounts(account_number=123456,account_firstname=\"Royce\",account_lastname=\"Chua\",current_balance=1000,address=\"Silver Street Quezon City\",email=\"roycechua123@gmail.com\")\n",
+        "\n",
+        "print(\"Account 1\")\n",
+        "print(Account1.account_firstname)\n",
+        "print(Account1.account_lastname)\n",
+        "print(Account1.current_balance)\n",
+        "print(Account1.address)\n",
+        "print(Account1.email)\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "Account2 = Accounts(account_number=654321,account_firstname=\"John\",account_lastname=\"Doe\",current_balance=2000,address=\"Gold Street Quezon City\",email=\"johndoe@yahoo.com\")\n",
+        "\n",
+        "print(\"Account 2\")\n",
+        "print(Account2.account_firstname)\n",
+        "print(Account2.account_lastname)\n",
+        "print(Account2.current_balance)\n",
+        "print(Account2.address)\n",
+        "print(Account2.email)\n",
+        "\n",
+        "print ()\n",
+        "\n",
+        "#Creating and using an ATM object\n",
+        "ATM1 = ATM()\n",
+        "ATM1.deposit(Account1,500)\n",
+        "ATM1.check_currentbalance(Account1)\n",
+        "\n",
+        "ATM1.deposit(Account2,300)\n",
+        "ATM1.check_currentbalance(Account2)\n",
+        "\n",
+        "#3) Run the main.py program again and run the output."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "u7epOctqP_lx"
+      },
+      "source": [
+        "SUPPLEMENTARY ACTIVITY"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class ATM():\n",
+        "    serial_number = 0\n",
+        "    transactions_list = []\n",
+        "\n",
+        "    def __init__(self, serial_number):\n",
+        "        self.serial_number = serial_number\n",
+        "        self.transactions_list = []\n",
+        "        print(\"ATM serial number:\", self.serial_number)\n",
+        "\n",
+        "    def deposit(self, Account: Accounts, amount):\n",
+        "        Account.current_balance += amount\n",
+        "        self.transactions_list.append(f\"Account {Account.account_number} deposited ${amount}\")\n",
+        "        print(\"deposit complete\")\n",
+        "\n",
+        "    def withdraw(self, Account: Accounts, amount):\n",
+        "        Account.current_balance -= amount\n",
+        "        self.transactions_list.append(f\"Account {Account.account_number} withdrew ${amount}\")\n",
+        "        print(\"withdraw complete\")\n",
+        "\n",
+        "    def check_currentbalance(self, Account: Accounts):\n",
+        "        print(f\"Current balance: ${Account.current_balance}\")\n",
+        "\n",
+        "    def view_transactionsummary(self):\n",
+        "        print(\"\\nTransaction Summary: \")\n",
+        "        for transaction in self.transactions_list:\n",
+        "          print(transaction)\n",
+        "\n",
+        "\n",
+        "# Test the program\n",
+        "Account1 = Accounts(account_number=123456,account_firstname=\"Royce\",account_lastname=\"Chua\",current_balance=1000,address=\"Silver Street Quezon City\",email=\"roycechua123@gmail.com\")\n",
+        "\n",
+        "print(\"Account 1\")\n",
+        "print(Account1.account_firstname)\n",
+        "print(Account1.account_lastname)\n",
+        "print(Account1.current_balance)\n",
+        "print(Account1.address)\n",
+        "print(Account1.email)\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "Account2 = Accounts(account_number=654321,account_firstname=\"John\",account_lastname=\"Doe\",current_balance=2000,address=\"Gold Street Quezon City\",email=\"johndoe@yahoo.com\")\n",
+        "\n",
+        "print(\"Account 2\")\n",
+        "print(Account2.account_firstname)\n",
+        "print(Account2.account_lastname)\n",
+        "print(Account2.current_balance)\n",
+        "print(Account2.address)\n",
+        "print(Account2.email)\n",
+        "\n",
+        "\n",
+        "print()\n",
+        "\n",
+        "# Create ATM and perform transactions\n",
+        "ATM1 = ATM(777)\n",
+        "\n",
+        "ATM1.deposit(Account1, 500)\n",
+        "ATM1.check_currentbalance(Account1)\n",
+        "ATM1.deposit(Account2, 500)\n",
+        "ATM1.check_currentbalance(Account2)\n",
+        "ATM1.withdraw(Account1, 200)\n",
+        "ATM1.check_currentbalance(Account1)\n",
+        "\n",
+        "# View transaction summary\n",
+        "ATM1.view_transactionsummary()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "VE3JkdHypOGC",
+        "outputId": "e5f1c1b8-4bca-45f5-f221-bdbd8bb3be64"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Account 1\n",
+            "Royce\n",
+            "Chua\n",
+            "1000\n",
+            "Silver Street Quezon City\n",
+            "roycechua123@gmail.com\n",
+            "\n",
+            "Account 2\n",
+            "John\n",
+            "Doe\n",
+            "2000\n",
+            "Gold Street Quezon City\n",
+            "johndoe@yahoo.com\n",
+            "\n",
+            "ATM serial number: 777\n",
+            "deposit complete\n",
+            "Current balance: $1500\n",
+            "deposit complete\n",
+            "Current balance: $2500\n",
+            "withdraw complete\n",
+            "Current balance: $1300\n",
+            "\n",
+            "Transaction Summary: \n",
+            "Account 123456 deposited $500\n",
+            "Account 654321 deposited $500\n",
+            "Account 123456 withdrew $200\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMrh0RqgG5HjWbAi0+0ghgr",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
